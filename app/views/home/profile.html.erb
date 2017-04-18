@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3"><%=@username%>'s Recipes</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<div class="col">
+  <% @recipes.each do |recipe|%>
+  <div class="card my-2">
+      <div class="card-block ">
+        <h4><%= link_to recipe.name,recipe_path(recipe)%></h4>
+        <%=recipe.summary %> <br>
+        <em><%=recipe.user.name %></em> <br> 
+        <small> Created <%=recipe.created_at.to_formatted_s(:time) %></small>
+      </div>
+    </div>
+  <%end%>
+</div>
