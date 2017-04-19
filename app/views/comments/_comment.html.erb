@@ -1,5 +1,6 @@
 <div class="card my-2">
   <div class="card-block">
-    <%= comment.user.name %> wrote: <%= comment.content %>
+    <%= comment.user.name %> wrote: <%= comment.content %> <br>
+    <small>about <%= time_ago_in_words(comment.created_at) %> ago</small>
   </div>
 </div>

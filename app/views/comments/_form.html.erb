@@ -1,6 +1,6 @@
-<%= simple_form_for([@recipe, @recipe.comments.build]) do |f| %>
+<%= simple_form_for([@recipe, @recipe.comments.build],remote: true) do |f| %>
   <p>
-    <%= f.input :content %>
+    <%= f.input :content ,placeholder: "write a comment..."%>
   </p>
   <p>
     <%= f.submit %>

@@ -29,13 +29,11 @@
                                     method: :delete,
                                     data: { confirm: "Are you sure you want to delete this Recipe?"} %>
 <%end%>
- <br>
- <h2>Comments</h2>
+ <hr>
+ <%= link_to 'Comments','#', id: "comments-link"%>(<%= @recipe.comments.count%>)
 
 
-<%= link_to 'Back', recipes_path %> <br>
-
-
-    <%= render @recipe.comments %>
-
-    <%= render 'comments/form'%>
+    <div id="comments-section">
+       <%= render @recipe.comments %>
+       <%= render 'comments/form'%>
+    </div>
