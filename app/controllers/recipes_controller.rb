@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
-  #load_and_authorize_resource
+  load_and_authorize_resource param_method: :set_recipe, only: [:show, :edit, :update, :destroy]  #automatically authorize all actions in a RESTful style resource controller
 
   # GET /recipes
   # GET /recipes.json
@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-    authorize! :update, @recipe
+    #authorize! :update, @recipe
   end
 
   # POST /recipes

@@ -8,7 +8,7 @@ class HomeController < ApplicationController
    else
       redirect_to root_path, notice: "User Not Found"
    end
-      @recipes = Recipe.where("user_id = ?", User.find_by_name(params[:id])).order("created_at desc")
+      @recipes = Recipe.where("user_id = ?", User.find_by_name(params[:id]))
   end
 
 end
