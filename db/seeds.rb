@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+foliwe = User.create!(name: "Foliwe" ,email: "foliwe@example.com", password: "password")
+akuma = User.create!(name: "Akuma", email: "akuma@example.com", password: "password")
+
+3.times do
+  Recipe.create!(
+    name: Faker::Lorem.sentence,
+    summary: Faker::Lorem.sentence(3),
+    description: Faker::Lorem.paragraphs,
+    user_id: foliwe.id
+    )
+end
+
+3.times do
+  Recipe.create!(
+    name: Faker::Lorem.sentence,
+    summary: Faker::Lorem.sentence(3),
+    description: Faker::Lorem.paragraphs,
+    user_id: akuma.id
+    )
+end
+puts '========================================='
+puts "2 users created !!"
+puts "6 Recipes created !!"
+

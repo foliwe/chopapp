@@ -9,6 +9,6 @@
   <br> 
   <%= link_to recipe.name, recipe_path(recipe) %> <br>
   <%= recipe.summary %> <br>
-  <small>Created_by </small>
+  <small>Created_by  <%= recipe.user.name %> </small>
   </p>
 <%end%>
