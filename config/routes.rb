@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
   
   devise_for :users
-  resources :recipes
+  resources :recipes do 
+    resources :comments
+  end
 end
 
+ 

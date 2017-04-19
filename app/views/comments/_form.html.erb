@@ -1,0 +1,8 @@
+<%= simple_form_for([@recipe, @recipe.comments.build]) do |f| %>
+  <p>
+    <%= f.input :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
