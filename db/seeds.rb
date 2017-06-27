@@ -27,7 +27,15 @@ end
     user_id: akuma.id
     )
 end
+
+4.times do 
+    Style.create!(
+        name:Faker::Food.ingredient
+        )
+end
+
 puts '========================================='
+puts "4 users created !!"
 puts "2 users created !!"
 puts "6 Recipes created !!"
 

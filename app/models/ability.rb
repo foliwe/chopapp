@@ -6,6 +6,7 @@ class Ability
 
 
     user ||= User.new # guest user (not logged in)
+  
      can :read, :all
 
      can :update, Recipe do |recipe|

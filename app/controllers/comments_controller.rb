@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_user!
+   
   def create
     @recipe = Recipe.friendly.find(params[:recipe_id])
     @comment = @recipe.comments.create(comment_params)

@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require owl.carousel
 //= require tether
 //= require bootstrap
 //= require cocoon
+//= require selectize
 //= require turbolinks
-//= require_tree .
+

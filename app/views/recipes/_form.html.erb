@@ -13,23 +13,40 @@
 
   <div class="field">
     <%= f.input :name %>
+    </div>
+
+    <div class="field">
     <%= f.input :summary %>
-    <%= f.input :description %>
-    <%= image_tag(@recipe.image.thumb.url) if @recipe.image? %>
-    <%= f.input :image %>
-    <%= f.hidden_field :image_cache %>
+    </div>
+
+  
+  <div class="field">
+   <%= f.association :categories, input_html: { id: 'selectized'} ,placeholder: "Select categories......" %>
   </div>
 
+    <div class="field">
+    <%= f.input :description %>
+    </div>
+
+    <div class="field"><%= image_tag(@recipe.image.thumb.url) if @recipe.image? %>
+      <%= f.input :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+ 
+
   <h4>Ingredients</h4>
-  <div id="tasks">
-    <%= f.simple_fields_for :ingredients do |ing| %>
-    <%= render 'ingredient_fields', f: ing %>
-    <%end%>
-    <div class="links">
-      <%= link_to_add_association 'Add ingredients', f, :ingredients %></div>
+  <div class="field">
+    <div id="tasks">
+      <%= f.simple_fields_for :ingredients do |ing| %>
+      <%= render 'ingredient_fields', f: ing %>
+      <%end%>
+      <div class="links">
+        <%= link_to_add_association 'Add ingredients', f, :ingredients %></div>
+    </div>
   </div>
 
   <div class="actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+

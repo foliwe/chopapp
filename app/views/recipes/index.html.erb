@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Recipes</h1>
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <%=render @recipes %>
+    </div>
+  </div>
+</div>
 
-<% @recipes.each do |recipe| %>
-  <p> <%= link_to recipe do %>
-  <%= image_tag recipe.image , size: "400x250" %> 
-  <%end%>
-  <br> 
-  <%= link_to recipe.name, recipe_path(recipe) %> <br>
-  <%= recipe.summary %> <br>
-  <small>Created_by  <%= recipe.user.name %> </small>
-  </p>
-<%end%>

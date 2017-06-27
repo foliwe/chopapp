@@ -3,6 +3,8 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :ingredients, inverse_of: :recipe, dependent: :destroy
+  has_many :recipe_categories
+  has_many :categories, through: :recipe_categories
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
   mount_uploader :image, ImageUploader
   extend FriendlyId

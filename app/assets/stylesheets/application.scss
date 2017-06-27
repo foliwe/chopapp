@@ -1,8 +1,15 @@
 
 /* ...
 *= require_self
-*= require_tree .
+*= require owl.carousel
+*= require owl.theme
+*= require selectize
+*= require selectize.default
 */
 
 @import "bootstrap";
 @import "font-awesome";
+
+body{
+  margin: 0px;
+}

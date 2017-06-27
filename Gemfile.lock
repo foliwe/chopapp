@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/acrogenesis/owlcarousel-rails.git
+  revision: 2dd679c61b795fa08003994c74d140c214781141
+  branch: OwlCarousel2
+  specs:
+    owlcarousel-rails (1.1.3.3)
+      jquery-rails
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -165,6 +173,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selectize-rails (0.12.4)
     simple_form (3.4.0)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -221,11 +230,13 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mini_magick (~> 4.7)
+  owlcarousel-rails!
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails-assets-tether (>= 1.3.3)!
   sass-rails (~> 5.0)
+  selectize-rails (~> 0.12.4)
   simple_form (~> 3.4)
   spring
   spring-watcher-listen (~> 2.0.0)
