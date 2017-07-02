@@ -1,14 +1,45 @@
+<section class="h_one">
+  <h4 class="text-center">Latest Recipes</h4>
+  <div class="d-flex justify-content-center">
+    <hr class="ps p-4 text-center">
+  </div>
+  
+  <div class="wrapper_section_one">
+    <div class="scroller">
+    <% @recipes.each do |recipe|%>
+      <div>
+          <%= link_to recipe do %>
+            <%= image_tag recipe.image ,size: 250%>
+          <%end%>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</section>
 
-<div class="owl-carousel owl-theme">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=1" data-src-retina="https://placehold.it/350x250&text=1-retina" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=2" data-src-retina="https://placehold.it/350x250&text=2-retina" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=3" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=5" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=6" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=7" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=8" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=9" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=10" alt="">
-    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=11" alt="">
-</div>
+<section class="h_two">
+  <div class="wrapper_section_two">
+    <div class="d-flex justify-content-center P-4">
+      <h5 class="">Get inspired</h5>
+    </div>
+      <h6 class="text-center p-4">HAND-PICKED BITS  BITES</h6>
+    
+      <div class="d-flex justify-content-center" >
+          <span class="d-flex align-items-center">FILTER BY: </span>
+          <span class="btn btn-primary btn-sm">All Recipes</span> | 
+          <span class="btn btn-primary btn-sm">Traditional Recipes</span> |    
+          <span class="btn btn-primary btn-sm">Meat Recipes</span> | 
+          <span class="btn btn-primary btn-sm">Fish Recipes</span> | 
+          <span class="btn btn-primary btn-sm">Pastry</span> 
+      </div>
+  </div>
+    <div class="P-6 album text-muted">
+      <div class="container">
+        <div class="row">
+          <%=render @recipes %>
+        </div>
+      </div>
+    </div>
+
+</section>
+

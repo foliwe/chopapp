@@ -48,4 +48,4 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'cancancan', '~> 1.16'
 gem 'selectize-rails', '~> 0.12.4'
-gem 'owlcarousel-rails', github: 'acrogenesis/owlcarousel-rails', branch: 'OwlCarousel2'
+gem "jquery-slick-rails"

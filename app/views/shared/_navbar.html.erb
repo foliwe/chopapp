@@ -1,50 +1,73 @@
-<nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar yamm navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%=link_to 'ChopApp', root_path, class: "navbar-brand" %>
+  <%= image_tag('main_clean.svg', class: "navbar-brand") %>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <!--a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a-->
-      </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to 'New Recipe',new_recipe_path, class: "nav-link" %>
-      </li>
-      <%end%>
-    </ul>
-    <ul class="navbar-nav ml-2">
-    <% if !user_signed_in? %>
-      <li class="nav-item">
-        <%=link_to 'Log In', new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%=link_to 'Register', new_user_registration_path, class: "nav-link"%>
-      </li>
-      <%else%>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.name%>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/user/<%=current_user.name%>">Profile</a>
-           <div class="dropdown-divider"></div>
-          <%=link_to 'Settings', edit_user_registration_path, class: "dropdown-item"  %>
-           <div class="dropdown-divider"></div>
-          <%=link_to 'Help', '', class: "dropdown-item"  %>
-           <div class="dropdown-divider"></div>
-           <%=link_to 'Log Out', destroy_user_session_path, class: "dropdown-item" ,method: :delete %>
-        </div>
-      </li>
-      <%end%>
+            <div class="dropdown yamm-fw">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuYamm3FW" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuYamm3FW">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                      <ul class="col list-unstyled">
+                        <li>
+                          <p><strong>HEALTHY RECIPES</strong></p>
+                        </li>
+                        <% @categories.each do |category| %>
+                        <li><%=link_to category.name%></li>          
+                        <%end%>
+                      </ul>
+                      <ul class="col list-unstyled">
+                        <li>
+                          <p><strong>Continent</strong></p>
+                        </li>
+                      </ul>
+                      <ul class="col list-unstyled">
+                        <li>
+                          <p><strong>SPECIAL DIETS</strong></p>
+                        </li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <div class="form-inline">
+    <ul class="navbar-nav mr-auto">
+      <% if !user_signed_in? %>
+      <li class="nav-item">
+         <%= link_to 'Log In', new_user_session_path ,class: "nav-link"%>
+      </li>
+      <li class="nav-item">
+         <%= link_to 'Register', new_user_registration_path ,class: "nav-link"%>
+      </li>
+      <%else%>
+      <li class="nav-item">
+        <%= link_to 'Log Out', destroy_user_session_path, class: "nav-link", method: :delete %>
+      </li>
+      <%end%>
+    </ul>
+   </div>
   </div>
 </nav>
+
+

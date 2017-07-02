@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="row ">
-  <div class="col-sm-5" id="test">
+
+<div class="row" style="padding-top: 60px;">
+  <div class="col-sm-5 " id="test">
           <% if can? :update, @recipe %>
       <div id="actions">
           <%= link_to edit_recipe_path(@recipe) do %>
@@ -18,28 +19,41 @@
           <%end%>
     <p><%= image_tag @recipe.image , id: "recipe-img", class: "img-fluid"%></p>
     
-    <p><%= link_to 'Add as Favorite','',class: "btn btn-primary btn-sm" %></p>
+      <p>
+      <% if current_user && current_user.id != @recipe.user.id%>
+      <% unless current_user.favorite_recipes.exists?(id: @recipe.id) %>
+      <%= link_to favorite_recipes_path(recipe_id: @recipe) ,class: "btn btn-outline-info btn-sm",method: :post do %>
+      <i class="fa fa-plus-circle" aria-hidden="true"> Add to Favorites</i>
+      <%end%>
+      <% else %>
+      <%= link_to favorite_recipe_path(@recipe),class: "btn btn-outline-danger btn-sm", method: :delete do %>
+      <i class="fa fa-minus-circle" aria-hidden="true"> Remove from Favorites</i>
+      <%end%>
+      <% end %>
+      <%end%>
+
+      </p>
   </div>
   <div class="col-sm-7">
-    <%= @recipe.name %>
-    <hr>
+    <h3><%= @recipe.name%></h3>
+    <hr class="ps">
     <%= @recipe.summary %>
     <hr>
-    <small> <%= render @recipe.categories if @recipe.categories.present?%></small>
+    <i class="fa fa-tag fa-2x" aria-hidden="true"></i><small> <%= render @recipe.categories if @recipe.categories.present?%></small>
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col-sm-3">
     <h4>Ingridents</h4>
-    <% @recipe.ingredients.each do |ingrident, n| %>
-    <p><%="#{n}"%><%= ingrident.name %></p>
+    <% @recipe.ingredients.each do |ingrident| %>
+    <p class="ingrident"><%= ingrident.name%></p>
 
     <%end %>
   </div>
-<div class="col-sm-9">
+<div class="col-sm-9 text-flow">
 <h4>Method</h4>
-  <%= @recipe.description %>
+  <%= simple_format @recipe.description %>
 </div>
 </div>
 
@@ -57,3 +71,10 @@
        <%= render 'comments/form'%>
        <%end%>
   
+<script>
+    $(document).ready(function(){
+      $('.your-class').slick({
+        setting-name: setting-value
+      });
+    });
+  </script>

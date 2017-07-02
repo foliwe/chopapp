@@ -1,11 +1,25 @@
 <p id="notice"><%= notice %></p>
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
 
-<h1>Recipes</h1>
-<div class="album text-muted">
-  <div class="container">
-    <div class="row">
-      <%=render @recipes %>
+<section class="one">
+  <h1>Recipes</h1>
+  <div class="album text-muted">
+    <div class="container">
+      <div class="row">
+        <%=render @recipes %>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
+
+
+<section class="two">
+  
+</section>
+
+<section class="three">
+  
+</section>
