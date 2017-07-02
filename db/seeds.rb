@@ -28,11 +28,8 @@ end
     )
 end
 
-4.times do 
-    Style.create!(
-        name:Faker::Food.ingredient
-        )
-end
+categories= Category.create!([{name:'Palm Oil'},{name:'Traditional Spices'},{name:'Cry fish'},{name:'Peau not butter'},{name:'Okary'},{name:'Okbolo'},{name:'Njasang'},{name:'Egusi'},{name:'Assorted Leaves'},])
+
 
 puts '========================================='
 puts "4 users created !!"
