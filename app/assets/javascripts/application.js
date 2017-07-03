@@ -17,6 +17,7 @@
 //= require cocoon
 //= require selectize
 //= require jquery.slick
+//= require social-share-button
 //= require turbolinks
 //= require_tree .
 

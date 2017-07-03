@@ -10,6 +10,9 @@
 @import "font-awesome";
 @import 'slick';
 @import 'slick-theme';
+@import "social-share-button";
+
+$size: 30px;
 
 body{
   margin: 0px;
@@ -66,5 +69,15 @@ body{
   &:hover{
     color: #000;
     text-position: 0 -80px;
+  }
+}
+
+
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
   }
 }

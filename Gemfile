@@ -49,3 +49,4 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'cancancan', '~> 1.16'
 gem 'selectize-rails', '~> 0.12.4'
 gem "jquery-slick-rails"
+gem 'social-share-button'
