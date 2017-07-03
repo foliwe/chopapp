@@ -29,17 +29,16 @@
       <div class="d-flex justify-content-center" >
           <span class="d-flex align-items-center">FILTER BY: </span>
           <%= link_to 'All Recipes',root_path, class: "btn btn-primary btn-sm"%> | 
-          <%= link_to 'Traditional Recipes',traditional_recipes_path, class: "btn btn-primary btn-sm"%> | 
-          <%= link_to 'Meat Recipes',meat_recipes_path, class: "btn btn-primary btn-sm"%> |
-          <%= link_to 'Fish Recipes',fish_recipes_path, class: "btn btn-primary btn-sm"%> |
-          <%= link_to 'Pastry Recipes',pastry_recipes_path, class: "btn btn-primary btn-sm"%> | 
+          <%= link_to 'Traditional Recipes',traditional_recipes_path, :remote => true ,class: "btn btn-primary btn-sm"%> | 
+          <%= link_to 'Meat Recipes',meat_recipes_path, :remote => true, class: "btn btn-primary btn-sm"%> |
+          <%= link_to 'Fish Recipes',fish_recipes_path,:remote => true,  class: "btn btn-primary btn-sm"%> |
+          <%= link_to 'Pastry Recipes',pastry_recipes_path, :remote => true, class: "btn btn-primary btn-sm"%> | 
       </div>
   </div>
-    <div class="P-6 album text-muted">
+    <div class="P-6 album text-muted " id ="action_all">
       <div class="container">
         <div class="row">
           <%=render @recipes %>
-        </div>
       </div>
     </div>
 

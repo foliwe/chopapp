@@ -16,22 +16,33 @@ class RecipesController < ApplicationController
   end
   def traditional
     @recipes = Recipe.traditional
-    render 'home/index'
+    respond_to do |format| 
+      format.js 
+    end
+    #render 'home/index'
   end
 
   def meat
     @recipes = Recipe.meat
-    render 'home/index'
+    respond_to do |format| 
+      format.js 
+    end
   end
 
   def fish
     @recipes = Recipe.fish
-    render 'home/index'
+    respond_to do |format| 
+      format.js 
+    end
+    #render 'home/index'
   end
 
   def pastry
     @recipes = Recipe.pastry
-    render 'home/index'
+    respond_to do |format| 
+      format.js 
+    end
+    #render 'home/index'
   end
   
 
@@ -93,6 +104,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :image, :summary ,category_ids:[], ingredients_attributes: [:id, :name, :_destroy])
+      params.require(:recipe).permit(:name, :description, :image, :summary ,:category_id, ingredients_attributes: [:id, :name, :_destroy])
     end
 end

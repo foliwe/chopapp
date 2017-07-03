@@ -32,7 +32,7 @@ end
     )
 end
 
-categories= Category.create!([{name:'Traditional'},{name:'Meat'},{name:'Fish'},{name:'Creative'},{name:'Salad'},{name:'Vegitable'},{name:'Bakery'}])
+categories= Category.create!([{name:'Traditional'},{name:'Meat'},{name:'Fish'},{name:'Creative'},{name:'Salad'},{name:'Vegetable'},{name:'pastry'}])
 
 
 puts '========================================='
