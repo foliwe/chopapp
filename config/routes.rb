@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   
   
   resources :recipes do 
+    collection do
+      get :traditional
+      get :meat
+      get :fish
+      get :pastry
+    end
     resources :comments
   end
 

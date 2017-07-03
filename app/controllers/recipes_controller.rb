@@ -14,6 +14,26 @@ class RecipesController < ApplicationController
   def show
 
   end
+  def traditional
+    @recipes = Recipe.traditional
+    render 'home/index'
+  end
+
+  def meat
+    @recipes = Recipe.meat
+    render 'home/index'
+  end
+
+  def fish
+    @recipes = Recipe.fish
+    render 'home/index'
+  end
+
+  def pastry
+    @recipes = Recipe.pastry
+    render 'home/index'
+  end
+  
 
   # GET /recipes/new
   def new

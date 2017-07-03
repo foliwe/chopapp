@@ -28,11 +28,11 @@
     
       <div class="d-flex justify-content-center" >
           <span class="d-flex align-items-center">FILTER BY: </span>
-          <span class="btn btn-primary btn-sm">All Recipes</span> | 
-          <span class="btn btn-primary btn-sm">Traditional Recipes</span> |    
-          <span class="btn btn-primary btn-sm">Meat Recipes</span> | 
-          <span class="btn btn-primary btn-sm">Fish Recipes</span> | 
-          <span class="btn btn-primary btn-sm">Pastry</span> 
+          <%= link_to 'All Recipes',root_path, class: "btn btn-primary btn-sm"%> | 
+          <%= link_to 'Traditional Recipes',traditional_recipes_path, class: "btn btn-primary btn-sm"%> | 
+          <%= link_to 'Meat Recipes',meat_recipes_path, class: "btn btn-primary btn-sm"%> |
+          <%= link_to 'Fish Recipes',fish_recipes_path, class: "btn btn-primary btn-sm"%> |
+          <%= link_to 'Pastry Recipes',pastry_recipes_path, class: "btn btn-primary btn-sm"%> | 
       </div>
   </div>
     <div class="P-6 album text-muted">

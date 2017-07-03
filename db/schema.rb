@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627183411) do
+ActiveRecord::Schema.define(version: 20170703180754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 20170627183411) do
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
-  end
-
-  create_table "favorite_recipes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_favorite_recipes_on_user_id", using: :btree
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -68,25 +61,17 @@ ActiveRecord::Schema.define(version: 20170627183411) do
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
   end
 
-  create_table "recipe_categories", force: :cascade do |t|
-    t.integer  "recipe_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_recipe_categories_on_category_id", using: :btree
-    t.index ["recipe_id"], name: "index_recipe_categories_on_recipe_id", using: :btree
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "slug"
     t.string   "image"
     t.text     "summary"
     t.integer  "user_id"
-    t.integer  "favorite_recipe_id"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_recipes_on_category_id", using: :btree
     t.index ["slug"], name: "index_recipes_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_recipes_on_user_id", using: :btree
   end
@@ -111,10 +96,7 @@ ActiveRecord::Schema.define(version: 20170627183411) do
 
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
-  add_foreign_key "favorite_recipes", "users"
   add_foreign_key "favorites", "users"
   add_foreign_key "ingredients", "recipes"
-  add_foreign_key "recipe_categories", "categories"
-  add_foreign_key "recipe_categories", "recipes"
   add_foreign_key "recipes", "users"
 end

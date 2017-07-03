@@ -12,23 +12,27 @@ akuma = User.create!(name: "Akuma", email: "akuma@example.com", password: "passw
 
 3.times do
   Recipe.create!(
-    name: Faker::Lorem.sentence,
+    name: Faker::Food.ingredient,
     summary: Faker::Lorem.sentence(3),
     description: Faker::Lorem.paragraphs,
+    image: "http://lorempixel.com/1200/800/food/",
+    category_id: Faker::Number.between(1, 7),
     user_id: foliwe.id
     )
 end
 
 3.times do
   Recipe.create!(
-    name: Faker::Lorem.sentence,
+    name: Faker::Food.ingredient,
     summary: Faker::Lorem.sentence(3),
     description: Faker::Lorem.paragraphs,
+    image: "http://lorempixel.com/1200/800/food/",
+    category_id: Faker::Number.between(1, 7),
     user_id: akuma.id
     )
 end
 
-categories= Category.create!([{name:'Palm Oil'},{name:'Traditional Spices'},{name:'Cry fish'},{name:'Peau not butter'},{name:'Okary'},{name:'Okbolo'},{name:'Njasang'},{name:'Egusi'},{name:'Assorted Leaves'},])
+categories= Category.create!([{name:'Traditional'},{name:'Meat'},{name:'Fish'},{name:'Creative'},{name:'Salad'},{name:'Vegitable'},{name:'Bakery'}])
 
 
 puts '========================================='

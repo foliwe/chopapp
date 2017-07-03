@@ -11,5 +11,10 @@ class HomeController < ApplicationController
    end
       @recipes = Recipe.where("user_id = ?", User.find_by_name(params[:id]))
   end
+  
+  def traditional
+    @recipes = Recipe.traditional
+    render :index
+  end
 
 end
