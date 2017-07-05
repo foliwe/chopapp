@@ -4,12 +4,12 @@
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
 </div>
-
 <div class="col">
   <% @recipes.each do |recipe|%>
   <div class="card my-2">
+      <%=image_tag recipe.image, size: "300x250", class: "card-img-top"%>
       <div class="card-block ">
-        <h4><%= link_to recipe.name,recipe_path(recipe)%></h4>
+        <h4><%= link_to recipe.name,recipe_path(recipe), class: "card-title"%></h4>
         <%=recipe.summary %> <br>
         <em><%=recipe.user.name %></em> <br> 
         <small> Created <%=recipe.created_at.to_formatted_s(:time) %></small>
@@ -17,3 +17,4 @@
     </div>
   <%end%>
 </div>
+

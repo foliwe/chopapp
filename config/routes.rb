@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
-  get 'user/:id', to: 'home#profile'
+  get 'user/:id', to: 'home#profile' ,as: 'profile'
 
   devise_for :users
 
@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :favorite_recipes, only: [:create, :destroy]
+  resources :favorite_recipes, only: [ :create, :destroy]
 
-
+  get  'user/:id/favorite_recipes/', to: 'favorite_recipes#index', as: 'favorites'
 
 
 

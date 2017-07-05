@@ -1,3 +1,13 @@
 // Place all the styles related to the favorite_recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.favorites_style{
+  width: 75%;
+  top: 73px;
+}
+
+#close{
+  position: absolute;
+  right: 20px;
+  top: -15px;
+}

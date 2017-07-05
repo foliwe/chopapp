@@ -1,7 +1,10 @@
 class FavoriteRecipesController < ApplicationController
   before_action :authenticate_user!
 
-before_action :set_project
+before_action :set_project, except: [:index]
+def index
+  @favorites = current_user.favorite_recipes
+end
   
   def create
     if Favorite.create(favorited: @recipe, user: current_user)

@@ -1,0 +1,21 @@
+<% @favorites.each do |favorite| %>
+  <div class="container favorites_style">
+    <div class="row d-flex justify-content-between">
+      <div class="media">
+        <%=image_tag favorite.image, class: "d-flex mr-3", size: "100x80"%>
+        <div class="media-body">
+         <h5 class="mt-0"><%=link_to favorite.name, favorite%></h5>
+          <span class="hidden-xs-down"><%=favorite.summary%></span> <br>
+          <%=favorite.user.name%>
+        </div>
+      </div>
+      <div class="justify-content-end " id="close">
+        <%= link_to favorite_recipe_path(favorite),class: "btn btn-secondary btn-sm", method: :delete do %>
+            <i class="fa fa-minus-circle" aria-hidden="true"> Remove</i>
+          <%end%>
+      </div>
+    </div>
+    <hr>
+  </div>
+<%end%>
+

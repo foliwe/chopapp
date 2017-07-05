@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
   friendly_id :name, use: :slugged
   validates :name, length: { minimum: 3}
   validates :summary, length: { minimum: 10}
-  validates_presence_of :description ,:category_id
+  validates_presence_of :description ,:category_id, :image
   after_initialize :set_defaults
 
   def set_defaults

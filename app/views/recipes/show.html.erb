@@ -18,26 +18,32 @@
     </div>
           <%end%>
     <p><%= image_tag @recipe.image , id: "recipe-img", class: "img-fluid"%></p>
-    <%= social_share_button_tag(@recipe.name) %>
-    
-    
-      <% if current_user && current_user.id != @recipe.user.id%>
-      <% unless current_user.favorite_recipes.exists?(id: @recipe.id) %>
-      <%= link_to favorite_recipes_path(recipe_id: @recipe) ,class: "btn btn-outline-info btn-sm",method: :post do %>
-      <i class="fa fa-plus-circle" aria-hidden="true"> Add to Favorites</i>
-      <%end%>
-      <% else %>
-      <%= link_to favorite_recipe_path(@recipe),class: "btn btn-outline-danger btn-sm", method: :delete do %>
-      <i class="fa fa-minus-circle" aria-hidden="true"> Remove from Favorites</i>
-      <%end%>
-      <% end %>
-      <%end%>
-
+    <div class="d-flex justify-content-between">
+        <div class="">
+          <%= social_share_button_tag(@recipe.name) %>
+        </div>
       
+        <div class="">
+            <% if current_user && current_user.id != @recipe.user.id%>
+            <% unless current_user.favorite_recipes.exists?(id: @recipe.id) %>
+            <%= link_to favorite_recipes_path(recipe_id: @recipe) ,method: :post do %>
+            <i class="fa fa-plus fa-lg" aria-hidden="true"></i> <span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
+                         <small> Add to </small></span></i>
+            <%end%>
+            <% else %>
+            <%= link_to favorite_recipe_path(@recipe),class: "btn btn-danger btn-sm", method: :delete do %>
+            <i class="fa fa-minus-circle" aria-hidden="true"> Remove from Favorites</i>
+            <%end%>
+            <% end %>
+            <%end%>
+        </div>
+    </div>
+ 
   </div>
   <div class="col-sm-7">
  
-    <h3><%= @recipe.name%></h3>
+       <h3><%= @recipe.name%></h3> By: <small><%= link_to @recipe.user.name, profile_path(@recipe.user.name)%></small> &nbsp;
+        <%= gravatar_tag @recipe.user.email, class: "img-fluid rounded-circle" ,size: 40%>
     <hr class="ps">
     <%= @recipe.summary %>
     <hr>
@@ -50,13 +56,13 @@
     <h4>Ingridents</h4>
     <% @recipe.ingredients.each do |ingrident| %>
     <p class="ingrident"><%= ingrident.name%></p>
-
     <%end %>
   </div>
 <div class="col-sm-9 text-flow">
 <h4>Method</h4>
   <%= simple_format @recipe.description %>
   <%= social_share_button_tag(@recipe.name) %>
+    
 </div>
 </div>
 

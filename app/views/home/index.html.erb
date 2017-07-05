@@ -1,21 +1,22 @@
 <section class="h_one">
-  <h4 class="text-center">Latest Recipes</h4>
-  <div class="d-flex justify-content-center">
-    <hr class="ps p-4 text-center">
-  </div>
-  
-  <div class="wrapper_section_one">
-    <div class="scroller">
-    <% @recipes.each do |recipe|%>
-      <div class="">
-          <%= link_to recipe do %>
-            <%= image_tag recipe.image ,size: 250%>
-          <%end%>
-      <h6><%=recipe.name%></h6>
-      </div>
-      <%end%>
+  <div class="row justify-content-sm-center">
+    <h4 class="text-center">Latest Recipes</h4>
+    <div class="d-flex justify-content-center">
+      <hr class="ps p-4 text-center">
     </div>
-
+    
+      <div class="wrapper_section_one">
+        <div class="scroller">
+        <% @recipes.each do |recipe|%>
+          <div class="">
+              <%= link_to recipe do %>
+                <%= image_tag recipe.image ,size: 250%>
+              <%end%>
+          <h6 class="text-center"><%=recipe.name%></h6>
+          </div>
+          <%end%>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -29,7 +30,7 @@
       <div class="d-flex justify-content-center" >
           <span class="d-flex align-items-center">FILTER BY: </span>
           <%= link_to 'All Recipes',root_path, class: "btn btn-primary btn-sm"%> | 
-          <%= link_to 'Traditional Recipes',traditional_recipes_path, :remote => true ,class: "btn btn-primary btn-sm"%> | 
+          <%= link_to 'Traditional Recipes',traditional_recipes_path, remote: :true ,class: "btn btn-primary btn-sm"%> | 
           <%= link_to 'Meat Recipes',meat_recipes_path, :remote => true, class: "btn btn-primary btn-sm"%> |
           <%= link_to 'Fish Recipes',fish_recipes_path,:remote => true,  class: "btn btn-primary btn-sm"%> |
           <%= link_to 'Pastry Recipes',pastry_recipes_path, :remote => true, class: "btn btn-primary btn-sm"%> | 
