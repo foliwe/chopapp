@@ -81,3 +81,50 @@ body{
     width: $size;
   }
 }
+
+@media (max-width: 575px) {
+
+  .navbar-light .navbar-nav .nav-link{
+  color: #000;
+}
+
+ }
+
+
+ #session_bg_0{
+  background-color: #34495e;
+  color: #fff;
+
+    .btn-info {
+    color: #fff;
+    background-color: #3498db;
+    border-color: #3498db;
+    border-radius: 58px;
+    width: 150px;
+}
+ }
+ #session_bg_1{
+  color: #fff;
+  height: 600px;
+  background: image-url('rice_edit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+
+ }
+.login_parent{
+  background-color:#f7f7f9;
+  height: 100vh;
+  position: relative;
+.login_form{
+  margin: 0;
+    position: absolute;
+    box-shadow: 7px 8px 10px rgba(136, 136, 136, 0.58);
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+}

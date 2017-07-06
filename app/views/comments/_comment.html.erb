@@ -1,6 +1,9 @@
-<div class="p-2">
-   <%= comment.user.name %> wrote: 
-     <%= comment.content %>
-   <small>about <%= time_ago_in_words(comment.created_at) %> ago</small>
-   <hr>
+<div class="media p-2">
+  <%= gravatar_tag comment.user, class: "d-flex align-self-start mr-3" ,size: 60%>
+  <div class="media-body">
+  <h8 class="mt-1"><%= comment.user.name %></h8><br>
+  <%= comment.content %> <br>
+  <small>about <%= time_ago_in_words(comment.created_at) %> ago</small>
+  <hr>
+  </div>
 </div>
