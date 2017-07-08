@@ -134,6 +134,7 @@ body{
     width: auto;
     height: 38px;
     border-radius: 0px 18px 16px 0px;
+
 }
 .stylish-input-group .form-control{
   border-right:0; 
@@ -149,4 +150,11 @@ body{
     background:transparent;
     height: 37px;
     border-radius: 51px;
+}
+    
+#container_search{
+
+    .btn-info{
+      border-radius: 12px 0px 0px 12px;
+    }
 }
