@@ -1,5 +1,4 @@
 class FavoriteRecipesController < ApplicationController
-  before_action :authenticate_user!
 
 before_action :set_project, except: [:index]
 def index

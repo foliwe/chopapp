@@ -21,6 +21,7 @@
                       <li>
                         <p><strong>HEALTHY RECIPES</strong></p>
                       </li>
+                      <li><%=link_to 'All Recipes',recipes_path%></li>
                       <% @categories.each do |category| %>
                       <li><%=link_to category.name%></li>          
                       <%end%>
@@ -80,11 +81,11 @@
     </ul>
     </div>
 
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
     <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-
+ -->
     </div>
 </nav>
 
