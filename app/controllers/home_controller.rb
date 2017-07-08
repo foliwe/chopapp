@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @recipe_meat = Recipe.meat
-    @recipes = Recipe.all
+    @q = Recipe.ransack(params[:q])
+    @recipes = @q.result(distinct: true)
   end
 
   def profile

@@ -51,3 +51,4 @@ gem 'selectize-rails', '~> 0.12.4'
 gem "jquery-slick-rails"
 gem 'social-share-button'
 gem 'gravatarify', '~> 3.0.0'
+gem 'ransack', github: 'activerecord-hackery/ransack'

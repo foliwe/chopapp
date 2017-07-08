@@ -2,6 +2,27 @@
 <% content_for :head do %>
   <meta name="turbolinks-cache-control" content="no-cache">
 <% end %>
+
+  <div class="container">
+    <div class=" row justify-content-md-center p-4">
+          <div class="col-md-6 col-md-offset-3">
+              <div id="container"> 
+                      <%= search_form_for @q do |f| %>
+                  <div class="input-group stylish-input-group">
+                    <%= f.select :category_id_eq, options_from_collection_for_select(Category.all.order(:name), :id, :name, @q.category_id_eq), {prompt: "Choose a Category"}, {class: 'form-control'} %>
+                      <%= f.search_field :name_cont ,class: "form-control",placeholder: "searh" %>
+                      <span class="input-group-addon">
+                          <button type="submit">
+                             <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>  
+                      </span>
+                  </div>
+                  <%end%>
+              </div>
+          </div>
+    </div>
+  </div>
+
 <section class="one">
   <h1>Recipes</h1>
   <div class="album text-muted">
