@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   
   
   resources :recipes do 
+    member do 
+      put 'like', to: 'recipes#upvote'
+    end
     collection do
       get :traditional
       get :meat

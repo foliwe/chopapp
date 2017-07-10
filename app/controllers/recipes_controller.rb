@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :upvote, :downvote, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
   load_and_authorize_resource param_method: :set_recipe, only: [:show, :edit, :update, :destroy]  #automatically authorize all actions in a RESTful style resource controller
 
@@ -10,8 +10,18 @@ class RecipesController < ApplicationController
     @recipes = @q.result(distinct: true)
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.json
+  def upvote
+    @recipe.upvote_by current_user
+    respond_to do |format|
+      format.js
+    end
+
+  end
+
+  def downvote
+    @recipe.downvote_by current_user
+  end
+
   def show
 
   end

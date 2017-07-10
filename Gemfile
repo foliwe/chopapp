@@ -52,3 +52,4 @@ gem "jquery-slick-rails"
 gem 'social-share-button'
 gem 'gravatarify', '~> 3.0.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'acts_as_votable'

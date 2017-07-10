@@ -1,4 +1,5 @@
 jQuery(document).on 'turbolinks:load', ->
+  $('[data-toggle="tooltip"]').tooltip()
   $('.scroller').slick
     dots: false
     slidesToShow: 3
